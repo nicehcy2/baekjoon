@@ -91,7 +91,8 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
         
         //트리 구조 출력
         printf("%s%s%s\n", prefix, pointer, head->name);
-
+        
+        //디렉토리일 경우 실행
         if (head->is_dir) {
             full_path = malloc(strlen(directory) + strlen(head->name) + 2); //디렉토리의 경로와 이름의 수를 메모리에 할당
             sprintf(full_path, "%s/%s", directory, head->name); //디렉토리의 경로와 이름을 저장
@@ -106,7 +107,8 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
         } else {
             counter->files++;
         }
-
+        
+        //current entry를 head enrty에 대입하고 head는 head의 next에 대입
         current = head;
         head = head->next;
 
