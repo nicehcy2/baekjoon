@@ -79,6 +79,7 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
         return 0;
     }
     
+    //트리 구조의 모양
     for (index = 0; index < size; index++) {
         if (index == size - 1) {
             pointer = "└── ";
@@ -87,17 +88,19 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
             pointer = "├── ";
             segment = "│   ";
         }
-
+        
+        //트리 구조 출력
         printf("%s%s%s\n", prefix, pointer, head->name);
 
         if (head->is_dir) {
-            full_path = malloc(strlen(directory) + strlen(head->name) + 2);
-            sprintf(full_path, "%s/%s", directory, head->name);
+            full_path = malloc(strlen(directory) + strlen(head->name) + 2); //디렉토리의 경로와 이름의 수를 메모리에 할당
+            sprintf(full_path, "%s/%s", directory, head->name); //디렉토리의 경로와 이름을 저장
 
-            next_prefix = malloc(strlen(prefix) + strlen(segment) + 1);
-            sprintf(next_prefix, "%s%s", prefix, segment);
-
-            walk(full_path, next_prefix, counter);
+            next_prefix = malloc(strlen(prefix) + strlen(segment) + 1); //prefix와 segment의 수를 메모리에 할당
+            sprintf(next_prefix, "%s%s", prefix, segment); //next_prefix에 prefix와 segment의 값을 저장(들여쓰기)
+            
+            //재귀함수로 tree 모양 
+            tree(full_path, next_prefix, counter);
             free(full_path);
             free(next_prefix);
         } else {
@@ -115,7 +118,7 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
 }
 
 int main(int argc, char *argv[]) {
-    char *directory = argc > 1 ? argv[1] : ".";
+    char *directory = argc > 1 ? argv[1] : "."; //1보다 크면 argv[1]의 값을 아니면 .을 directory 값에 저장 (directory 값은 open할 디렉토리의 경로를 의미)
     printf("%s\n", directory);
 
     counter_t counter = {0, 0};
