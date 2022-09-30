@@ -17,7 +17,7 @@ typedef struct entry {
     int device;
     char *mode;
     char *usr_name;
-    char *size;
+    long size;
     int is_dir;
     struct entry *next;
 } entry_t;
@@ -25,6 +25,7 @@ typedef struct entry {
 int tree(const char *directory, const char *prefix, counter_t *counter) {
     entry_t *head = NULL, *current, *iter;
     size_t size = 0, index;
+    char unit;
 
     struct dirent *dirent;
     struct stat buf;
@@ -133,49 +134,6 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
             current->mode[i] = '\0';
         }
 
-        /**
-        int csize = resize(fileInfo.st_size);
-        char *tmp;
-
-        switch (csize) {
-        case 1: {
-            sprintf(tmp, "%d", fileInfo.st_size);
-            strcpy(current->size, tmp);
-            break;
-        }
-        case 2: {
-            float t = fileInfo.st_size / 1000.0;
-            asprintf(tmp, "%g", t);
-            strcpy(current->size, &tmp);
-            strcat(current->size, 'K');
-            break;
-        }
-        case 3: {
-            int t = (int)fileInfo.st_size / 1000;
-            sprintf(tmp, "%d", t);
-            strcpy(current->size, tmp);
-            strcat(current->size, 'K');
-            break;
-        }
-        case 4: {
-            float t = (float)fileInfo.st_size / 10000000.0;
-            asprintf(&tmp, "%g", t);
-            strcpy(current->size, &tmp);
-            strcat(current->size, 'M');
-            break;
-        }
-        case 5: {
-            int t = (int)fileInfo.st_size / 10000000;
-            sprintf(tmp, "%d", t);
-            strcpy(current->size, tmp);
-            strcat(current->size, 'M');
-            break;
-        }
-        default:
-            break;
-        }
-        **/
-
         if (head == NULL) {
             head = current;
         } else if (strcmp(current->name, head->name) < 0) {
@@ -208,8 +166,26 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
             segment = "│   ";
         }
 
-        printf("%s%s[ %ld %d %s %s %ld ]  %s\n", prefix, pointer, head->inode,
-               head->device, head->mode, head->usr_name, head->size,
+        unit ='\0';
+        if (head->size >= 1000 && head->size < 10000000)
+            unit = 'K';
+        else if (head->size >= 10000000 && head->size < 100000000000)
+            unit = 'M';
+        else if (head->size >= 100000000000 && head->size < 1000000000000000)
+            unit = 'G';
+
+        if (unit == 'K'){
+            head->size /= 1000;
+        }
+        else if (unit =='M'){
+            head->size /= 10000000;
+        }
+        else if (unit == 'G'){
+            head->size /= 100000000000;
+        }
+
+        printf("%s%s[ %ld %d %s %s %ld%c ]  %s\n", prefix, pointer, head->inode,
+               head->device, head->mode, head->usr_name, head->size, unit,
                head->name);
 
         if (head->is_dir) {
@@ -239,22 +215,6 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
 
     return 0;
 }
-
-/**
-int resize(long size) {
-    if (size >= 0 && size < 1000)
-        return 1;
-    else if (size >= 1000 && size < 10000)
-        return 2;
-    else if (size >= 10000 && size < 10000000)
-        return 3;
-    else if (size >= 10000000 && size < 1000000000)
-        return 4;
-    else if (size >= 1000000000)
-        return 5;
-    return 0;
-}
-**/
 
 int main(int argc, char *argv[]) {
     char *directory = argc > 1 ? argv[1] : ".";
