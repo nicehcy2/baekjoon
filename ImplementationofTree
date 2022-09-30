@@ -26,6 +26,7 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
     entry_t *head = NULL, *current, *iter;
     size_t size = 0, index;
     char unit;
+    char filename[1024];
 
     struct dirent *dirent;
     struct stat buf;
@@ -43,9 +44,13 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
     counter->dirs++;
 
     while ((dirent = readdir(dir_ptr)) != NULL) {
-        stat(dirent->d_name, &buf);
-
         if (dirent->d_name[0] == '.') {
+            continue;
+        }
+
+        sprintf(filename, "%s/%s", directory, dirent->d_name);
+
+        if (stat(filename, &buf) == -1) {
             continue;
         }
 
@@ -166,7 +171,7 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
             segment = "│   ";
         }
 
-        unit ='\0';
+        unit = '\0';
         if (head->size >= 1000 && head->size < 10000000)
             unit = 'K';
         else if (head->size >= 10000000 && head->size < 100000000000)
@@ -174,13 +179,11 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
         else if (head->size >= 100000000000 && head->size < 1000000000000000)
             unit = 'G';
 
-        if (unit == 'K'){
+        if (unit == 'K') {
             head->size /= 1000;
-        }
-        else if (unit =='M'){
+        } else if (unit == 'M') {
             head->size /= 10000000;
-        }
-        else if (unit == 'G'){
+        } else if (unit == 'G') {
             head->size /= 100000000000;
         }
 
