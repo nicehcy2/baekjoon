@@ -44,7 +44,6 @@ int tree(const char *directory, const char *prefix, counter_t *counter) {
     while ((dirent = readdir(dir_ptr)) != NULL) {
         stat(dirent->d_name, &buf);
 
-
         if (dirent->d_name[0] == '.') {
             continue;
         }
