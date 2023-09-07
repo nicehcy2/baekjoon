@@ -36,6 +36,8 @@ void dijkstra(int start) {
 		int curDist = pq.top().first;
 		int curNode = pq.top().second;
 		pq.pop();
+
+		// 이미 담겨져 있는 것보다 distance가 크면 넘어간다.
 		if (dist[curNode] < curDist) {
 			continue;
 		}
