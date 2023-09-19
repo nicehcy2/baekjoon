@@ -24,23 +24,6 @@ void Solution() {
 				int flag = false;
 				if (arr[j] > arr[i]) {
 					count++;
-					flag = true;
-					if (j == 0) {
-						int temp = arr[i];
-						for (int k = i - 1; k >= j; k--) {
-							arr[k + 1] = arr[k];
-						}
-						arr[j] = temp;
-					}
-				}
-				else {
-					if (flag) {
-						int temp = arr[i];
-						for (int k = i - 1; k >= j + 1; k--) {
-							arr[k + 1] = arr[k];
-						}arr[j] = temp;
-					}
-					
 				}
 			}
 		}
