@@ -52,7 +52,7 @@ public class Main {
         if (parent[x] == x) {
             return x;
         } else {
-            return parent[x] = find(parent[x]);
+            return find(parent[x]);
         }
     }
 
@@ -60,10 +60,9 @@ public class Main {
         int rootA = find(a);
         int rootB = find(b);
 
-        if (rootA != rootB) {
-            if (a < b) parent[rootB] = rootA;
-            else parent[rootA] = rootB;
-        }
+        if (rootA < rootB) parent[rootB] = rootA;
+        else parent[rootA] = rootB;
+
     }
 
     static void Solve() throws Exception {
