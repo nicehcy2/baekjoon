@@ -4,7 +4,7 @@
 <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=nicehcy2" alt="Solved.ac프로필">
 </p><br/>
 
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub). <br/>
 
 ## 최근 기업 코딩테스트 알고리즘 분류 정리
 
