@@ -2,7 +2,7 @@
 
 <p><a href="https://solved.ac/nicehcy2">
 <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=nicehcy2" alt="Solved.ac프로필">
-</p>
+</p><br/>
 
 This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
 
