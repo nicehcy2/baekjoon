@@ -15,4 +15,5 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 
 ## 알고리즘 정리
 
-알고리즘의 개념과 괜찮은 문제를 정리했습니다.
+[바로가기](./CodingTest.md)
+알고리즘의 개념을 정리해보았습니다. 
