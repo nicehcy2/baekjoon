@@ -1,4 +1,4 @@
-[메인으로 돌아가기](https://github.com/tony9402/baekjoon)
+[메인으로 돌아가기](https://github.com/nicehcy2/baekjoon)
 
 ### 최근 코딩테스트 정리
 
@@ -35,23 +35,29 @@
 |파수|트리, 조합, 파싱, 구현|
 
 #### 코딩테스트 Algorithm 분류
- - 구현
- - DFS
- - BFS
- - Two pointer
- - Brute Force
+ - 구현, 시뮬레이션
+ - 그래프 이론, DFS, BFS
+ - 누적합
  - DP
- - Tree DP
- - 시뮬레이션
+ - Brute Force
+ - Greedy
+ - 백트래킹
+ - 재귀함수
+ - Two pointer
+ - 자료구조 -> 우선순위 큐, 스택, 트리
  - Union Find
  - String
- - 자료구조 -> 우선순위 큐, 스택, 트리
+ - 정렬
+ - 최단거리 -> BFS, 다익스트라, 벨만포드
+ - Binary Search
  - 순열조합
+ - Bit masking
+ - 라인스위핑
+ - LIS(최대증가부분수열)
+   
  - Trie
  - Flood fill
- - Bit masking
  - 위상정렬
- - 이분탐색
- - 최단거리
  - 파싱
  - Segment Tree
+ - Tree DP
