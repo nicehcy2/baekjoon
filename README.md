@@ -1,11 +1,9 @@
 # 코딩테스트 대비 문제집 with Baekjoon
 
+This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub). <br/>
 <p><a href="https://solved.ac/nicehcy2">
 <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=nicehcy2" alt="Solved.ac프로필">
 </p><br/>
-
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub). <br/>
-코딩 테스트 준비를 위한 알고리즘 문제 저장소입니다. <br/>
 
 ## 최근 기업 코딩테스트 알고리즘 분류 정리
 
