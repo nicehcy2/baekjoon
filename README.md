@@ -6,6 +6,8 @@
 
 This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
 
+
+
 ## 최근 기업 코딩테스트 알고리즘 분류 정리
 
 [바로가기](./CodingTest.md)
