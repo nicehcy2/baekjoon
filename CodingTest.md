@@ -54,7 +54,7 @@
  - Bit masking
  - 라인스위핑
  - LIS(최대증가부분수열)
-   
+ - 수학
  - Trie
  - Flood fill
  - 위상정렬
