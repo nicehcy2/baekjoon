@@ -8,3 +8,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 최근 기업 코딩테스트에 나왔던 알고리즘들을 정리해보았습니다.
 
 대부분은 코딩테스트를 본 분들에게 들은거라 몇개가 누락되었거나 잘못된 부분이 있을 수도 있습니다.
+
+## 알고리즘 정리
+
+알고리즘의 개념과 괜찮은 문제를 정리했습니다.
