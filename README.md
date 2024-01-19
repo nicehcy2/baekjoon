@@ -19,4 +19,4 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 
 알고리즘의 개념을 정리해보았습니다. 
 
-[Dynamic Programming](./algorithms/Dynamic Programming/README.md)
+[Dynamic Programming](./algorithms/Dynamic%20Programming/README.md)
