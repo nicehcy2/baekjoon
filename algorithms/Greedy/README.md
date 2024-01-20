@@ -90,4 +90,8 @@
 <br/>
 
 ## 7. 다시 풀만한 문제
+[문제 풀기](https://github.com/nicehcy2/baekjoon/blob/main/algorithms/Greedy/PROBLEM.md)
+
+<br/>
+
 [메인으로 돌아가기](https://github.com/nicehcy2/baekjoon)
