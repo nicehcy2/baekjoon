@@ -112,5 +112,9 @@ _ex) f(n) = f(n-1) + f(n-2)_ <br/><br/>
 
 ## 5. 기타내용
 
+<br/>
+
+코딩 테스트에서 DFS, BFS로 풀 수 있는 마지노선은 경우의 수가 500만까지이다. <br/><br/>
+
 ## 6. 다시 풀만한 문제
 [메인으로 돌아가기](https://github.com/nicehcy2/baekjoon)
