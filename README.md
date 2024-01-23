@@ -22,4 +22,6 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ### Algorithm
 
 - [Dynamic Programming](./algorithms/Dynamic%20Programming/README.md)
+  - [문제 모음](./algorithms/Dynamic%20Programming/README.md) <br/><br/>
 - [Greedy](./algorithms/Greedy/README.md)
+  - [문제 모음](./algorithms/Greedy/PROBLEM.md) <br/><br/>
