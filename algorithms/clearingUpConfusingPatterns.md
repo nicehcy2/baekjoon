@@ -143,3 +143,27 @@ c++ STL에서 제공하는 priority_queue는 기본적으로 최대 힙(Max Heap
   func(matrix);
   
 ```
+
+<br/>
+
+### fill
+```c++
+  // 1로 초기화
+  fill(arr[0], arr[0] + 25 ,1); // 시작 반복자, 종료 반복자
+  fill_n(arr[0], 25, 1);  // 시작지점과 원소의 개수
+
+  // 2차원 배열
+  for(int i=0; i<rows; i++){
+    fill(arr[i], arr[i] + 25, 1);
+    fill_n(arr[i], cols, 1);
+  }
+```
+
+<br/>
+
+### memset
+```c++
+  #include <cstring>
+
+  memset(visited, 0, sizeof(visited));
+```
