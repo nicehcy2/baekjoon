@@ -91,7 +91,7 @@ c++ STL에서 제공하는 priority_queue는 기본적으로 최대 힙(Max Heap
   priority_queue<vector<int>, vector<vector<int>>, cmp> pq;
 ```
 
-<br/><br/>
+<br/>
 
 ### sort()
 - 오름차순 (greater<>())
@@ -112,6 +112,8 @@ c++ STL에서 제공하는 priority_queue는 기본적으로 최대 힙(Max Heap
   sort(v.begin(), v.end(), cmp);
 ```
 
+<br/>
+
 ### 2차원 vector 초기화
 ```c++
   // 3 x 4 크기으ㅢ 2차원 벡터를 0으로 초기화
@@ -129,6 +131,8 @@ c++ STL에서 제공하는 priority_queue는 기본적으로 최대 힙(Max Heap
     v.push_back(lv);
   }
 ```
+
+<br/>
 
 ### 2차원 배열 호출
 ```c++
