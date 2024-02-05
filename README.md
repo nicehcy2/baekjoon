@@ -16,7 +16,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## 알고리즘 정리
 
 [알고리즘 정리](./algorithms/README.md) <br/>
-[헷갈리는 문법 정리](./algorithms/clearingUpConfusingPatternss.md) <br/>
+[헷갈리는 문법 정리](./algorithms/clearingUpConfusingPatterns.md) <br/>
 
 알고리즘의 개념과 코딩 테스트를 연습해오면서 자주 틀리는 문법을 기록했습니다,
 
