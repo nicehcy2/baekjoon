@@ -87,3 +87,22 @@ string *str = new string("abcdef"); // new를 이용한 동적할당
 
 |함수|동작 기능|
 |:---|:---|
+|str.append(str2)|str 뒤에 str2 문자열을 이어 붙여줌('+'와 같은 역할)|
+|str.append(str2, n, m)|str 뒤에 str2의 n index부터 m개의 문자를 이어 붙여줌|
+|str.append(n, 'a')|str 뒤에 n개의 'a'를 이어 붙여줌|
+|str.insert(n, str2)|n번째 index 앞에 str2 문자열을 삽입함|
+|str.replace(n, k, str2)|n번째 index부터 k개의 문자열을 str2로 대체함|
+|str.clear()|저장된 문자열을 모두 지움|
+|str.erase(n, m)|n번째 index부터 m개의 문자를 지움|
+|str.erase(n, m)(iterator)|n과 m은 iterator|
+|str.erase|clear와 같은 동작|
+|str.push_back(c)|str의 맨 뒤에 c 문자를 붙여줌|
+|str.pop_back()|str의 맨 뒤의 문자를 제거|
+|str.assgin(str2)|str에 str2 문자열을 할당(변수 정의와 동일)|
+
+<br/>
+
+#### ▶ 기타 유용한 string 멤버 함수
+
+|함수|동작 기능|
+|:---|:---|
