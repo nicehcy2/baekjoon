@@ -106,7 +106,7 @@ string *str = new string("abcdef"); // new를 이용한 동적할당
 
 |함수|동작 기능|
 |:---|:---|
-|str.find("abcd")|"abcd"가 str에 포함되어 있는지를 확인. 찾으면 해당 부분의 첫 번째 index를 반환|
+|str.find("abcd")|"abcd"가 str에 포함되어 있는지를 확인. 찾으면 해당 부분의 첫 번째 index를 반환, 실패하면 string::npos 반환|
 |str.find("abcd", n)|n번째 index부터 "abcd"를 find|
 |str.substr()|str 전체를 반환|
 |str.substr(n)|str의 n번째 index부터 끝까지의 문자를 부분문자열로 반환|
