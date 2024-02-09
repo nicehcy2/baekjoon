@@ -106,3 +106,14 @@ string *str = new string("abcdef"); // new를 이용한 동적할당
 
 |함수|동작 기능|
 |:---|:---|
+|str.find("abcd")|"abcd"가 str에 포함되어 있는지를 확인. 찾으면 해당 부분의 첫 번째 index를 반환|
+|str.find("abcd", n)|n번째 index부터 "abcd"를 find|
+|str.substr()|str 전체를 반환|
+|str.substr(n)|str의 n번째 index부터 끝까지의 문자를 부분문자열로 반환|
+|str.substr(n, k)|str의 n번째 index부터 k개의 문자를 부분문자열로 반환|
+|str.compare(str2)|str과 str2가 같은지를 비교. 같다면 0, str<str2인 경우 음수, str>str2인 경우 양수를 반환|
+|swap(str1, str2)|str1과 str2를 바꿔줌.
+|isdigit(c)|c 문자가 숫자이면 true, 아니면 false를 반환|
+|isalpha(c)|c 문자가 영어이면 true, 아니면 false를 반환|
+|toupper(c)|c 문자를 대문자로 변환|
+|tolower(c)|c 문자를 소문자로 변환|
