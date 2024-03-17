@@ -1,35 +1,53 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
- 
+
+string str;
+
+void Input() {
+	
+	cin >> str;
+}
+
+void Solution() {
+
+	string tmp = "";
+	int ans = 0;
+	bool isMinus = false;
+	str += "+";
+
+	for (int i = 0; i < str.size(); i++) {
+
+		if (str[i] == '+' || str[i] == '-') {
+			if (isMinus) {
+				ans -= stoi(tmp);
+			}
+			else {
+				ans += stoi(tmp);
+			}
+			tmp = "";
+		}
+		else {
+			tmp += str[i];
+		}
+
+		if (str[i] == '-') {
+			isMinus = true;
+		}
+	}
+
+	cout << ans << '\n';
+}
+
 int main() {
-    string input;
-    cin >> input;
- 
-    int result = 0;
-    string num;
-    bool isMinus = false;
- 
-    for (int i = 0; i <= input.size(); i++) {
-        
-        if (input[i] == '-' || input[i] == '+' || i==input.size()) {
-            if (isMinus) {
-                result -= stoi(num);
-                num = "";
-            }
-            else {
-                result += stoi(num);
-                num = "";
-            }
-        }
-        else {
-            num += input[i];
-        }
- 
-        if (input[i] == '-') {
-            isMinus = true;
-        }    
-    }
-    
-    cout << result;
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	Input();
+	Solution();
+
+	return 0;
 }
