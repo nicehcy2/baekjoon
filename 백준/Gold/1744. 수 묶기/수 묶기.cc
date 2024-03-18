@@ -5,7 +5,7 @@
 using namespace std;
 
 int N, num;
-vector<int> plusVec, minusVec, zeroVec;
+vector<int> plusVec, minusVec;
 
 void Input() {
 
@@ -15,15 +15,8 @@ void Input() {
 
 		cin >> num;
 
-		if (num > 0) {
-			plusVec.push_back(num);
-		}
-		else if (num == 0) {
-			zeroVec.push_back(num);
-		}
-		else {
-			minusVec.push_back(num);
-		}
+		if (num > 0) plusVec.push_back(num);
+		else minusVec.push_back(num);
 	}
 }
 
@@ -32,52 +25,17 @@ void Solution() {
 	sort(plusVec.begin(), plusVec.end(), greater<>());
 	sort(minusVec.begin(), minusVec.end());
 
-	bool mulFlag = false;
-	int ans = 0, plusTmp = 0;
-	for (int i = 0; i < plusVec.size(); i++) {
-		if (plusVec[i] == 1) {
-			ans += plusVec[i];
-		}
-		else {
-			if (mulFlag) {
-				plusTmp *= plusVec[i];
-				ans += plusTmp;
-				mulFlag = false;
-				plusTmp = 0;
-			}
-			else {
-				plusTmp += plusVec[i];
-				mulFlag = true;
-			}
-		}
-	}
-	ans += plusTmp;
+	int ans = 0;
 
-	int maxMinus = 0;
-	if (minusVec.size() % 2 != 0) {
-		maxMinus = minusVec[minusVec.size() - 1];
-		minusVec.erase(minusVec.end() - 1);
+	if (plusVec.size() % 2 != 0) ans += plusVec[plusVec.size() - 1];
+	for (int i = 0; i < (int)plusVec.size() - 1; i+=2) {
+		if (plusVec[i + 1] == 1) ans += plusVec[i] + plusVec[i + 1];
+		else ans += plusVec[i] * plusVec[i + 1];
 	}
-
-	int minusTmp = 0;
-	mulFlag = false;
-	for (int i = 0; i < minusVec.size(); i++) {
-		if (mulFlag) {
-			minusTmp *= minusVec[i];
-			ans += minusTmp;
-			mulFlag = false;
-			minusTmp = 0;
-		}
-		else {
-			minusTmp += minusVec[i];
-			mulFlag = true;
-		}
-	}
-
-	if (maxMinus != 0) {
-		if (zeroVec.empty()) {
-			ans += maxMinus;
-		}
+		
+	if (minusVec.size() % 2 != 0) ans += minusVec[minusVec.size() - 1];
+	for (int i = 0; i < (int)minusVec.size() - 1; i+= 2) {
+		ans += minusVec[i] * minusVec[i + 1];
 	}
 
 	cout << ans << '\n';
