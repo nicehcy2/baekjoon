@@ -1,47 +1,42 @@
 #include <iostream>
-#include <vector>
 #include <queue>
 #include <algorithm>
 
 using namespace std;
 
-int n;
-pair<int, int> lesson[200001];
+int N;
+pair<int, int> arr[200001];
+
+priority_queue<int, vector<int>, greater<int>> pq;
 
 void Input() {
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		int start, end;
-		cin >> start >> end;
-		lesson[i] = { start, end };
+
+	cin >> N;
+
+	for (int i = 0; i < N; i++) {
+
+		cin >> arr[i].first >> arr[i].second;
 	}
 }
 
 void Solution() {
-	int classNum = 1;
 
-	priority_queue<int, vector<int>, greater<int>> pq;
-	sort(lesson, lesson + n);
+	sort(arr, arr + N);
+	pq.push(arr[0].second);
 
-	pq.push(lesson[0].second);
-	for (int i = 1; i < n; i++) {
-		int checkEnd = pq.top();
-
-		if (checkEnd > lesson[i].first) {
-			pq.push(lesson[i].second);
-			classNum++;
-		}
-		else {
-			pq.push(lesson[i].second);
+	for (int i = 1; i < N; i++) {
+		if (pq.top() <= arr[i].first) {
 			pq.pop();
+			pq.push(arr[i].second);
 		}
+		else pq.push(arr[i].second);
 	}
 
-	cout << classNum << '\n';
-
+	cout << pq.size() << '\n';
 }
 
 int main() {
+
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
