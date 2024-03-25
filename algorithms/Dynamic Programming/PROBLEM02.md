@@ -1,6 +1,6 @@
 # Dynamic Programming 2 (동적계획법 2)
 
-[메인으로 돌아가기]([https://github.com/tony9402/baekjoon](https://github.com/nicehcy2/baekjoon/tree/main)))
+[메인으로 돌아가기](https://github.com/nicehcy2/baekjoon/tree/main)
 
 다이나믹 프로그래밍 유형 문제 위주로 뽑았습니다.
 
