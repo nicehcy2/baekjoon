@@ -15,7 +15,7 @@ void Input() {
 
 void Solution() {
 
-	dp[0] = 0, dp[1] = arr[1], dp[2] = max(arr[2], arr[1] + arr[2]);
+	dp[0] = 0, dp[1] = arr[1], dp[2] = arr[1] + arr[2];
 	dp[3] = max(arr[1] + arr[3], arr[2] + arr[3]);
 
 	for (int i = 4; i <= N; i++) {
