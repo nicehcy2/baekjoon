@@ -29,10 +29,17 @@ void bfs(int x) {
 		int time = q.front().second;
 		q.pop();
 
+		// bfs여서 가능한 상황
+		// 부모 노드가 세 갈래로 뻗으면서 queue에 넣은 다음에 visited이 동작하므로 
+		// queue에 넣을 떄는 visited에 걸리지 않는다.
 		visited[cur] = true;
 
 		if (!first && MIN == time && cur == K) {
 			result++;
+		}
+
+		if (!first && MIN < time) {
+			break;
 		}
 		
 		if (first && cur == K) {
