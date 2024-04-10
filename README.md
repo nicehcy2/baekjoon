@@ -34,6 +34,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
   - [문제 모음](./algorithms/Graph%20Search/PROBLEM.md) <br/><br/>
 - [구현](./algorithms/Implementation/README.md)
   - [문제 모음](./algorithms/Implementation/PROBLEM.md) <br/><br/>
+- [시뮬레이션](./algorithms/Simulation/README.md)
+  - [문제 모음](./algorithms/Simulation/PROBLEM.md) <br/><br/>
 
 ### Data Structure
 
