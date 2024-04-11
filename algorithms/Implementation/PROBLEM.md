@@ -18,7 +18,7 @@
 [백준 문제집](https://www.acmicpc.net/workbook/view/6783)
 |          순번          |        추천 문제         |        문제 번호         |        문제 이름         |         난이도          |        정보        |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| 00 |  :heavy_check_mark:  | <a href="https://www.acmicpc.net/problem/21608" target="_blank">21608</a> | <a href="https://www.acmicpc.net/problem/21608" target="_blank">상어 초등학교</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | |
+| 00 |  :heavy_check_mark:  | <a href="https://www.acmicpc.net/problem/21608" target="_blank">21608</a> | <a href="https://www.acmicpc.net/problem/21608" target="_blank">상어 초등학교</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | :o: |
 | 01 |  :heavy_check_mark:  | <a href="https://www.acmicpc.net/problem/21611" target="_blank">21611</a> | <a href="https://www.acmicpc.net/problem/21611" target="_blank">마법사 상어와 블리자드</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/15.svg"/> |                      |
 | 02 |  :heavy_check_mark:  | <a href="https://www.acmicpc.net/problem/2753" target="_blank">2753</a> | <a href="https://www.acmicpc.net/problem/2753" target="_blank">윤년</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/1.svg"/> |  |
 | 03 |  :heavy_check_mark:  | <a href="https://www.acmicpc.net/problem/5597" target="_blank">5597</a> | <a href="https://www.acmicpc.net/problem/5597" target="_blank">과제 안 내신 분..?</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/1.svg"/> |  |
