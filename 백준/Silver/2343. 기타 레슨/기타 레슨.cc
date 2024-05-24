@@ -20,7 +20,7 @@ void Solution() {
 
         mid = (start + end) / 2;
 
-        int cnt = 0, pSum = 0;
+        int cnt = 1, pSum = 0;
         for (int i = 0; i < N; i++) {
 
             if (pSum + arr[i] > mid) {
@@ -29,7 +29,6 @@ void Solution() {
             }
             pSum += arr[i];
         }
-        if (pSum != 0) cnt++;
 
         if (cnt <= M) {
             end = mid - 1;
