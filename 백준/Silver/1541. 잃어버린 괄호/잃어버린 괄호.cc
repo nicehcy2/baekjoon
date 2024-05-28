@@ -6,7 +6,7 @@ using namespace std;
 string str;
 
 void Input() {
-	
+
 	cin >> str;
 }
 
