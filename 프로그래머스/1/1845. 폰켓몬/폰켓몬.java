@@ -1,15 +1,22 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 class Solution {
     public int solution(int[] nums) {
-        Map<Integer, Long> map = Arrays.stream(nums)
-            .boxed()
-            .collect(Collectors.groupingBy(
-                num -> num, 
-                Collectors.counting()
-            ));
+        int answer = 0, cnt = 0;
         
-        return Math.min(map.size(), nums.length/2);
+        Map<Integer, Integer> hash = new HashMap<>();
+        
+        for (int n : nums) {
+            if (hash.containsKey(n) == false)
+                hash.put(n, 1);
+            cnt++;
+        }
+        
+        answer = hash.size();
+        if (answer > cnt / 2) {
+            answer = cnt / 2;
+        }
+        
+        return answer;
     }
 }
