@@ -26,7 +26,7 @@ public class Main {
 			fuels[i] = Integer.parseInt(st.nextToken());
 		}
 
-		result += fuels[0] * roads[0];
+		result += (long)fuels[0] * roads[0];
 		int cur = fuels[0];
 		int count = 1;
 		while (count < N - 1) {
@@ -34,7 +34,7 @@ public class Main {
 			if (cur > fuels[count]) {
 				cur = fuels[count];
 			}
-			result += cur * roads[count++];
+			result += (long)cur * roads[count++];
 		}
 
 		System.out.println(result);
