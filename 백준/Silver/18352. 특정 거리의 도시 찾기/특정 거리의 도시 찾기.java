@@ -43,6 +43,9 @@ public class Main {
 		while (!q.isEmpty()) {
 			int cur = q.poll();
 
+			if (dist[cur] < 1 && cur != X)
+				continue;
+
 			for (int i = 0; i < graph.get(cur).size(); i++) {
 
 				int next = graph.get(cur).get(i);
