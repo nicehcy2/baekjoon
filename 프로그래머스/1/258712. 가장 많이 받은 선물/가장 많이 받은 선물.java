@@ -1,3 +1,5 @@
+// 28분, 1시도, 엣지케이스 및 테스트케이스 고려 X
+
 import java.util.*;
 
 class Solution {
