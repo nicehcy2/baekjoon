@@ -1,75 +1,80 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.PriorityQueue;
-import java.util.StringTokenizer;
+import java.util.*;
+import java.io.*;
 
 public class Main {
 
-	static int N, M, K, X;
-	static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-	static int[] dist;
+    static int N, M, K, X, answer = 0;
+    static ArrayList<Integer>[] graph;
+    static int[] dist;
 
-	public static void main(String args[]) throws Exception {
+    static void solve() throws Exception {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-		K = Integer.parseInt(st.nextToken());
-		X = Integer.parseInt(st.nextToken());
+        PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> Integer.compare(o1.cost, o2.cost));
+        pq.add(new Node(X, 0));
+        dist[X] = 0;
 
-		for (int i = 0; i <= N; i++) {
-			graph.add(new ArrayList<>());
-		}
+        while (!pq.isEmpty()) {
 
-		for (int i = 0; i < M; i++) {
-			st = new StringTokenizer(br.readLine());
-			int start = Integer.parseInt(st.nextToken());
-			int end = Integer.parseInt(st.nextToken());
+            Node cur = pq.poll();
 
-			graph.get(start).add(end);
-		}
+            // 꺼낸 노드 = 현재 최소 비용을 갖는 노드
+            // 해당 노드의 비용이 현재 dist 배열에 기록된 내용보다 크다면 고려할 필요가 없으므로 스킵.
+            // 생략할 경우 이미 방문해서 최소를 구한 정점을 중복하여 방문하게 된다.
+            if (dist[cur.idx] < cur.cost) continue;
 
-		dist = new int[N + 1];
-		for (int i = 1; i <= N; i++) {
-			dist[i] = Integer.MAX_VALUE;
-		}
+            for (int i=0; i<graph[cur.idx].size(); i++) {
+                int next = graph[cur.idx].get(i);
 
-		PriorityQueue<Integer> q = new PriorityQueue<>((a, b) -> Integer.compare(a, b));
-		q.add(X);
-		dist[X] = 0;
+                if (dist[next] > dist[cur.idx] + 1) {
+                    dist[next] = dist[cur.idx] + 1;
+                    pq.add(new Node(next, dist[cur.idx] + 1));
+                }
+            }
+        }
 
-		while (!q.isEmpty()) {
-			int cur = q.poll();
+        StringBuilder sb = new StringBuilder();
+        for (int i=1; i<=N; i++) {
+            if (dist[i] == K) sb.append(i).append("\n");
+        }
+        if (sb.isEmpty()) System.out.println("-1");
+        else System.out.println(sb);
+    }
 
-			if (dist[cur] < 1 && cur != X)
-				continue;
+    static class Node {
+        int idx;
+        int cost;
 
-			for (int i = 0; i < graph.get(cur).size(); i++) {
+        Node(int idx, int cost) {
+            this.idx = idx;
+            this.cost = cost;
+        }
+    }
 
-				int next = graph.get(cur).get(i);
 
-				if (dist[next] > dist[cur] + 1) {
-					dist[next] = dist[cur] + 1;
-					q.add(next);
-				}
-			}
-		}
+    public static void main(String[] args) throws Exception {
 
-		int count = 0;
-		StringBuilder sb = new StringBuilder();
-		for (int i = 1; i <= N; i++) {
-			if (dist[i] == K) {
-				sb.append(i + "\n");
-				count++;
-			}
-		}
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        X = Integer.parseInt(st.nextToken());
 
-		if (count == 0) {
-			System.out.println(-1);
-			return;
-		}
-		System.out.println(sb);
-	}
+        graph = new ArrayList[N + 1];
+        dist = new int[N + 1];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+
+        for (int i=1; i<=N; i++) {
+            graph[i] = new ArrayList<>();
+        }
+        for (int i=0; i<M; i++) {
+            st = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+
+            graph[start].add(end);
+        }
+
+        solve();
+    }
 }
