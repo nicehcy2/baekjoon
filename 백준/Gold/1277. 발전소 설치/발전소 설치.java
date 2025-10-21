@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 
@@ -52,7 +53,7 @@ public class Main {
             }
         }
 
-        long answer = (long)(dist[N] * 1000.0);
+        long answer = (long)(dist[N] * 1000);
         System.out.println(answer);
     }
 
