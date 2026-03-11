@@ -1,28 +1,36 @@
 #include <iostream>
-#include <algorithm>
-#include <queue>
-#pragma warning disable:4996
+
+#define MOD 10007
 
 using namespace std;
 
-int dp[1001];
+int N;
+int dp[1010];
 
-int main() {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-	cout.tie(0);
+void Input() {
 
-	int n;
-	cin >> n;
+	cin >> N;
+}
 
-	dp[0] = 0;
-	dp[1] = 1;
-
-	for (int i = 2; i <= n + 1; i++) {
-		dp[i] = (dp[i - 1] + dp[i - 2]) % 10007;
+void Solution() {
+	
+	
+	dp[1] = 1, dp[2] = 2, dp[3] = 3;
+	for (int i = 4; i <= N; i++) {
+		dp[i] = (dp[i - 1] + dp[i - 2]) % MOD;
 	}
 
-	cout << dp[n + 1];
+	cout << dp[N] << '\n';
+}
+
+int main() {
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	Input();
+	Solution();
 
 	return 0;
 }
